@@ -1,0 +1,46 @@
+<svg width="900" height="600" viewBox="0 0 900 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="600" rx="48" fill="#03060B"/>
+  <rect x="60" y="60" width="780" height="480" rx="36" fill="url(#gradBG)" stroke="url(#stroke)" stroke-width="2"/>
+  <g filter="url(#glow)">
+    <circle cx="270" cy="210" r="160" fill="#38BDF8" fill-opacity="0.32"/>
+    <circle cx="640" cy="390" r="200" fill="#22C55E" fill-opacity="0.26"/>
+  </g>
+  <rect x="160" y="150" width="580" height="300" rx="26" fill="#050913" fill-opacity="0.92"/>
+  <rect x="200" y="190" width="200" height="48" rx="16" fill="#0B1727" stroke="#38BDF8" stroke-opacity="0.45"/>
+  <rect x="430" y="190" width="200" height="48" rx="16" fill="#0A1C19" stroke="#22C55E" stroke-opacity="0.45"/>
+  <rect x="200" y="260" width="520" height="160" rx="18" fill="#07111F" stroke="#1E293B" stroke-opacity="0.6"/>
+  <path d="M230 330C260 300 300 340 330 320C360 300 390 270 420 300C450 330 490 360 520 340C550 320 580 270 610 300C640 330 670 310 700 320" stroke="url(#pulse)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <g opacity="0.35">
+    <rect x="230" y="280" width="6" height="120" rx="3" fill="#38BDF8"/>
+    <rect x="280" y="290" width="6" height="100" rx="3" fill="#22C55E"/>
+    <rect x="330" y="300" width="6" height="90" rx="3" fill="#38BDF8"/>
+    <rect x="380" y="310" width="6" height="64" rx="3" fill="#22C55E"/>
+    <rect x="430" y="284" width="6" height="105" rx="3" fill="#A5F3FC"/>
+    <rect x="480" y="296" width="6" height="80" rx="3" fill="#22D3EE"/>
+    <rect x="530" y="308" width="6" height="70" rx="3" fill="#38BDF8"/>
+    <rect x="580" y="292" width="6" height="96" rx="3" fill="#22C55E"/>
+    <rect x="630" y="306" width="6" height="68" rx="3" fill="#A5F3FC"/>
+    <rect x="680" y="298" width="6" height="88" rx="3" fill="#38BDF8"/>
+  </g>
+  <defs>
+    <linearGradient id="gradBG" x1="60" y1="60" x2="840" y2="540" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#050E1A"/>
+      <stop offset="0.5" stop-color="#020508"/>
+      <stop offset="1" stop-color="#04110B"/>
+    </linearGradient>
+    <linearGradient id="stroke" x1="60" y1="60" x2="840" y2="540" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#38BDF8"/>
+      <stop offset="1" stop-color="#22C55E"/>
+    </linearGradient>
+    <linearGradient id="pulse" x1="230" y1="315" x2="700" y2="315" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#38BDF8"/>
+      <stop offset="1" stop-color="#22C55E"/>
+    </linearGradient>
+    <filter id="glow" x="0" y="-30" width="900" height="690" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feGaussianBlur stdDeviation="70" result="effect1_foregroundBlur"/>
+    </filter>
+  </defs>
+</svg>
+

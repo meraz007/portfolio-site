@@ -1,0 +1,42 @@
+<svg width="900" height="600" viewBox="0 0 900 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="600" rx="48" fill="#04060A"/>
+  <rect x="54" y="54" width="792" height="492" rx="40" fill="url(#background)" stroke="url(#border)" stroke-width="2"/>
+  <g filter="url(#softGlow)">
+    <ellipse cx="270" cy="210" rx="170" ry="130" fill="#38BDF8" fill-opacity="0.35"/>
+    <ellipse cx="620" cy="390" rx="210" ry="140" fill="#22C55E" fill-opacity="0.28"/>
+  </g>
+  <rect x="150" y="150" width="600" height="320" rx="28" fill="#060A12" fill-opacity="0.92"/>
+  <rect x="190" y="190" width="520" height="80" rx="20" fill="url(#heroGradient)"/>
+  <path d="M210 230L240 210L270 230L300 210L330 230L360 210L390 230" stroke="#1E3A8A" stroke-opacity="0.6" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="440" cy="230" r="16" fill="#0EA5E9"/>
+  <circle cx="520" cy="230" r="20" fill="#22C55E"/>
+  <circle cx="600" cy="230" r="12" fill="#38BDF8"/>
+  <rect x="190" y="290" width="260" height="140" rx="22" fill="#0B1220" stroke="#1E293B" stroke-opacity="0.5"/>
+  <rect x="470" y="290" width="240" height="60" rx="16" fill="#0F172A" stroke="#1E293B" stroke-opacity="0.5"/>
+  <rect x="470" y="370" width="160" height="40" rx="14" fill="#0F1A13" stroke="#134E4A" stroke-opacity="0.5"/>
+  <rect x="640" y="370" width="70" height="40" rx="14" fill="#112043" stroke="#0EA5E9" stroke-opacity="0.5"/>
+  <path d="M210 330C230 310 260 320 280 300C300 280 320 240 350 260C380 280 400 360 430 340" stroke="#38BDF8" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M240 370C260 350 280 360 300 350C320 340 330 320 350 330" stroke="#22C55E" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <defs>
+    <linearGradient id="background" x1="54" y1="54" x2="846" y2="546" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#071423"/>
+      <stop offset="0.5" stop-color="#050811"/>
+      <stop offset="1" stop-color="#06140F"/>
+    </linearGradient>
+    <linearGradient id="border" x1="54" y1="54" x2="846" y2="546" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#38BDF8" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#22C55E" stop-opacity="0.9"/>
+    </linearGradient>
+    <linearGradient id="heroGradient" x1="190" y1="190" x2="710" y2="270" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0EA5E9" stop-opacity="0.7"/>
+      <stop offset="0.5" stop-color="#0F172A" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#22C55E" stop-opacity="0.7"/>
+    </linearGradient>
+    <filter id="softGlow" x="0" y="-20" width="900" height="700" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feGaussianBlur stdDeviation="70" result="effect1_foregroundBlur"/>
+    </filter>
+  </defs>
+</svg>
+
