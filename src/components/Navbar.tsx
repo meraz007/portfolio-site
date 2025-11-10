@@ -77,7 +77,6 @@ export const Navbar = () => {
         )}
       >
         <button
-          data-cursor="magnetic"
           onClick={() => smoothScrollTo("#home", 80)}
           className="group relative text-lg font-semibold uppercase tracking-[0.3em] text-textPrimary transition-all hover:text-neonBlue"
         >
@@ -88,7 +87,6 @@ export const Navbar = () => {
         <nav className="hidden items-center gap-8 text-sm font-medium uppercase tracking-[0.25em] text-textPrimary md:flex">
           {NAV_LINKS.map((link) => (
             <button
-              data-cursor="magnetic"
               key={link.href}
               className="relative overflow-visible transition-colors hover:text-neonBlue"
               onClick={() => handleNavClick(link.href)}
@@ -110,7 +108,6 @@ export const Navbar = () => {
         </nav>
 
         <button
-          data-cursor="magnetic"
           onClick={() => setIsOpen((prev) => !prev)}
           className="relative inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-black/60 text-textPrimary shadow-glow transition hover:border-neonBlue/70 hover:text-neonBlue md:hidden"
           aria-label={isOpen ? "Close navigation" : "Open navigation"}
@@ -129,7 +126,6 @@ export const Navbar = () => {
           {NAV_LINKS.map((link) => (
             <li key={link.href}>
               <button
-                data-cursor="magnetic"
                 onClick={() => handleNavClick(link.href)}
                 className="flex w-full items-center justify-between rounded-2xl border border-white/5 bg-gradient-to-r from-white/5 via-transparent to-white/5 px-5 py-3 uppercase tracking-[0.35em] text-[0.65rem] text-textPrimary transition hover:border-neonBlue/60 hover:text-neonBlue"
               >

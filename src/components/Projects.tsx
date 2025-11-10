@@ -99,7 +99,6 @@ export const Projects = () => {
             tiltMaxAngleX={10}
             tiltMaxAngleY={10}
             perspective={1200}
-            data-cursor="magnetic"
             className="group"
           >
             <article
@@ -143,7 +142,6 @@ export const Projects = () => {
                   href={project.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  data-cursor="magnetic"
                   className={clsx(
                     "inline-flex items-center justify-between gap-3 rounded-full border border-neonBlue/60 px-5 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-neonBlue transition",
                     "hover:border-neonGreen/70 hover:text-neonGreen"

@@ -88,7 +88,6 @@ export const Experience = () => {
             <li
               key={item.company}
               data-experience-item
-              data-cursor="magnetic"
               className="relative ml-12 rounded-3xl border border-white/10 bg-black/60 p-8 shadow-glow"
             >
               <span className="absolute -left-[39px] top-8 flex h-9 w-9 items-center justify-center rounded-full border border-neonBlue/60 bg-black/70 text-neonBlue shadow-glow">

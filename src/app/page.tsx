@@ -5,12 +5,10 @@ import { Projects } from "@/components/Projects";
 import { Experience } from "@/components/Experience";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
-import { CustomCursor } from "@/components/CustomCursor";
 
 export default function Home() {
   return (
     <div className="relative min-h-screen overflow-hidden bg-background text-textPrimary">
-      <CustomCursor />
       <div className="pointer-events-none fixed inset-0 -z-20 bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.25),_transparent_55%),radial-gradient(circle_at_bottom,_rgba(34,197,94,0.18),_transparent_50%)]" />
       <div className="pointer-events-none fixed inset-0 -z-10 opacity-60">
         <div className="animate-gradient-move absolute inset-0 bg-[length:200%_200%] bg-gradient-to-br from-blue-500/15 via-purple-500/5 to-green-500/15 blur-3xl" />

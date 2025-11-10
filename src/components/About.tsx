@@ -117,7 +117,6 @@ export const About = () => {
               tiltMaxAngleX={12}
               tiltMaxAngleY={12}
               perspective={1000}
-              data-cursor="magnetic"
               className="group"
             >
               <div

@@ -93,24 +93,4 @@ body {
     z-index: 5;
   }
 
-  .custom-cursor {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    border: 2px solid rgba(56, 189, 248, 0.85);
-    box-shadow: 0 0 16px rgba(56, 189, 248, 0.65);
-    transform: translate(-50%, -50%) scale(1);
-    transition: transform 0.18s ease, box-shadow 0.18s ease;
-    pointer-events: none;
-    z-index: 50;
-    mix-blend-mode: screen;
-  }
-
-  .cursor-hover {
-    transform: translate(-50%, -50%) scale(2.2);
-    box-shadow: 0 0 36px rgba(56, 189, 248, 0.8);
-  }
 }

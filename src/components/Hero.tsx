@@ -144,7 +144,6 @@ export const Hero = () => {
           className="flex flex-col items-center gap-4 sm:flex-row"
         >
           <button
-            data-cursor="magnetic"
             onClick={() => smoothScrollTo("#projects", 70)}
             className="group relative min-w-[190px] overflow-hidden rounded-full border border-neonBlue/70 bg-black/70 px-8 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-neonBlue shadow-glow transition hover:border-neonGreen/80 hover:text-neonGreen"
           >
@@ -156,7 +155,6 @@ export const Hero = () => {
           </button>
 
           <button
-            data-cursor="magnetic"
             onClick={() => smoothScrollTo("#contact", 70)}
             className="group relative min-w-[190px] overflow-hidden rounded-full border border-white/10 bg-white/5 px-8 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-white transition hover:border-neonBlue/60 hover:text-neonBlue"
           >

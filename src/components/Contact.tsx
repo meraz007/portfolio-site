@@ -166,7 +166,6 @@ export const Contact = () => {
           </div>
           <div className="md:col-span-2 flex flex-col items-center gap-5 md:flex-row md:justify-between">
             <button
-              data-cursor="magnetic"
               type="submit"
               className="group relative inline-flex items-center gap-3 rounded-full border border-neonBlue/60 bg-black/60 px-8 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-neonBlue transition hover:border-neonGreen/70 hover:text-neonGreen"
             >
@@ -181,7 +180,6 @@ export const Contact = () => {
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  data-cursor="magnetic"
                   className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-slate-200 transition hover:border-neonBlue/60 hover:text-neonBlue"
                   aria-label={item.label}
                 >
