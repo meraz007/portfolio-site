@@ -93,12 +93,12 @@ export const Hero = () => {
           },
           "-=0.4"
         )
-        .from(
+        .to(
           "[data-hero-socials] a",
           {
-            y: 25,
-            opacity: 0,
-            scale: 0.8,
+            y: 0,
+            opacity: 1,
+            scale: 1,
             duration: 0.7,
             ease: "power3.out",
             stagger: 0.1,
@@ -212,6 +212,7 @@ export const Hero = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-black/40 text-slate-200 transition hover:border-neonBlue/60 hover:bg-black/60 hover:text-neonBlue hover:shadow-glow"
+              style={{ opacity: 0, transform: 'translateY(25px) scale(0.8)' }}
               aria-label={item.label}
             >
               <item.icon className="h-5 w-5" />
