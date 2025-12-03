@@ -3,29 +3,28 @@
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
-import { Briefcase, Layers3 } from "lucide-react";
+import { GraduationCap } from "lucide-react";
 import { ensureGsapRegistered, prefersReducedMotion } from "@/lib/gsapAnimations";
 
-const experience = [
+const education = [
   {
-    role: "Frontend Engineer",
-    company: "Cyber Squad Inc (Onsite)",
-    period: "Nov 2024 — Present",
-    description:
-      "Developed CRM and multi-role-based user interfaces tailored to different user permissions web applications using Next.js and Tailwind CSS. Collaborated with backend developers to define and implement RESTful API endpoints. Ensured responsive and optimized UI/UX across multiple devices and browsers. Wrote clean, maintainable code following best practices and reusable component architecture.",
-    stack: ["Next.js", "Tailwind CSS", "React", "RESTful APIs"],
+    degree: "Bachelor of Science in CSE",
+    institution: "Daffodil International University",
+    period: "Aug 2016 — Aug 2020",
   },
   {
-    role: "Frontend Developer",
-    company: "TupleApps (Remote)",
-    period: "April 2022 — Oct 2024",
-    description:
-      "Developed a fully responsive and dynamic SAAS platform using Vue.js, Next.js, and Tailwind CSS, focusing on optimizing user experience across devices. Developed a notification sending SAAS using Next.js and Tailwind CSS. Converted UI Figma designs to React, Vue, and pixel-perfect designs using Tailwind CSS. Collaborated with cross-functional teams to develop and implement final solutions.",
-    stack: ["Vue.js", "Next.js", "Tailwind CSS", "React", "Figma"],
+    degree: "Higher Secondary Certificate",
+    institution: "Milestone School and College",
+    period: "2013 — 2015",
+  },
+  {
+    degree: "Secondary School Certificate",
+    institution: "Lakshmipur Adarsho Samad Govt High School",
+    period: "2008 — 2013",
   },
 ];
 
-export const Experience = () => {
+export const Education = () => {
   const sectionRef = useRef<HTMLElement | null>(null);
   ensureGsapRegistered();
 
@@ -33,7 +32,7 @@ export const Experience = () => {
     () => {
       if (prefersReducedMotion()) return;
 
-      gsap.from("[data-experience-item]", {
+      gsap.from("[data-education-item]", {
         xPercent: -12,
         opacity: 0,
         duration: 0.9,
@@ -51,7 +50,7 @@ export const Experience = () => {
 
   return (
     <section
-      id="experience"
+      id="education"
       ref={sectionRef}
       className="relative mx-auto max-w-5xl px-6 py-24"
     >
@@ -61,51 +60,40 @@ export const Experience = () => {
 
       <div className="flex flex-col items-center gap-4 text-center">
         <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-black/40 px-4 py-2 text-xs font-medium uppercase tracking-[0.4em] text-neonGreen">
-          <Layers3 className="h-4 w-4 text-neonBlue" />
-          Experience
+          <GraduationCap className="h-4 w-4 text-neonBlue" />
+          Education
         </span>
         <h2 className="text-balance text-3xl font-semibold uppercase tracking-[0.3em] text-white md:text-4xl">
-          Professional Experience
+          Academic Background
         </h2>
         <p className="max-w-2xl text-sm text-slate-300 md:text-base">
-          Building scalable CRM and SaaS applications with modern frontend technologies, focusing on
-          user experience and performance optimization.
+          Foundation in computer science and engineering, providing a strong base for modern
+          frontend development and software engineering practices.
         </p>
       </div>
 
       <div className="relative mt-14">
         <div className="absolute left-6 top-0 bottom-0 w-px bg-gradient-to-b from-neonBlue via-white/20 to-neonGreen" />
         <ul className="space-y-10">
-          {experience.map((item, index) => (
+          {education.map((item, index) => (
             <li
-              key={item.company}
-              data-experience-item
+              key={item.institution}
+              data-education-item
               className="relative ml-12 rounded-3xl border border-white/10 bg-black/60 p-8 shadow-glow"
             >
               <span className="absolute -left-[39px] top-8 flex h-9 w-9 items-center justify-center rounded-full border border-neonBlue/60 bg-black/70 text-neonBlue shadow-glow">
-                {index === 0 ? <Briefcase className="h-4 w-4" /> : <Layers3 className="h-4 w-4" />}
+                <GraduationCap className="h-4 w-4" />
               </span>
               <div className="flex flex-wrap items-center justify-between gap-4">
                 <div>
                   <h3 className="text-base font-semibold uppercase tracking-[0.35em] text-white">
-                    {item.role}
+                    {item.degree}
                   </h3>
                   <p className="mt-1 text-sm uppercase tracking-[0.3em] text-neonBlue">
-                    {item.company}
+                    {item.institution}
                   </p>
                 </div>
                 <p className="text-xs uppercase tracking-[0.3em] text-slate-300">{item.period}</p>
-              </div>
-              <p className="mt-5 text-sm text-slate-300">{item.description}</p>
-              <div className="mt-6 flex flex-wrap gap-2">
-                {item.stack.map((tech) => (
-                  <span
-                    key={tech}
-                    className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[0.65rem] uppercase tracking-[0.3em] text-slate-200"
-                  >
-                    {tech}
-                  </span>
-                ))}
               </div>
             </li>
           ))}

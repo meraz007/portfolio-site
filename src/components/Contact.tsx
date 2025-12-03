@@ -1,32 +1,39 @@
 "use client";
 
-import { FormEvent, useRef } from "react";
+import { FormEvent, useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { ensureGsapRegistered, prefersReducedMotion } from "@/lib/gsapAnimations";
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail, Phone, CheckCircle2 } from "lucide-react";
 
 const socials = [
   {
     label: "GitHub",
-    href: "https://github.com/miraz007",
+    href: "https://github.com/meraz007/",
     icon: Github,
   },
   {
     label: "LinkedIn",
-    href: "https://www.linkedin.com/in/saifulislammiraz",
+    href: "https://www.linkedin.com/in/saiful-meraz",
     icon: Linkedin,
   },
   {
     label: "Email",
-    href: "mailto:hello@miraz.dev",
+    href: "mailto:saifulmeraz@gmail.com",
     icon: Mail,
+  },
+  {
+    label: "Phone",
+    href: "tel:+8801310709841",
+    icon: Phone,
   },
 ];
 
 export const Contact = () => {
   const sectionRef = useRef<HTMLElement | null>(null);
   const particleRef = useRef<HTMLDivElement | null>(null);
+  const toastRef = useRef<HTMLDivElement | null>(null);
+  const [showToast, setShowToast] = useState(false);
   ensureGsapRegistered();
 
   useGSAP(
@@ -67,7 +74,47 @@ export const Contact = () => {
     const form = event.currentTarget;
     const formData = new FormData(form);
     const name = formData.get("name");
-    alert(`Thanks ${name ?? "there"} — let's create something iconic!`);
+    
+    // Show toast
+    setShowToast(true);
+    
+    // Animate toast in
+    if (toastRef.current && !prefersReducedMotion()) {
+      gsap.fromTo(
+        toastRef.current,
+        {
+          y: 50,
+          opacity: 0,
+          scale: 0.8,
+        },
+        {
+          y: 0,
+          opacity: 1,
+          scale: 1,
+          duration: 0.5,
+          ease: "power3.out",
+        }
+      );
+    }
+    
+    // Hide toast after 3 seconds
+    setTimeout(() => {
+      if (toastRef.current && !prefersReducedMotion()) {
+        gsap.to(toastRef.current, {
+          y: -20,
+          opacity: 0,
+          scale: 0.9,
+          duration: 0.3,
+          ease: "power2.in",
+          onComplete: () => {
+            setShowToast(false);
+          },
+        });
+      } else {
+        setTimeout(() => setShowToast(false), 300);
+      }
+    }, 3000);
+    
     form.reset();
   };
 
@@ -99,15 +146,14 @@ export const Contact = () => {
             data-contact-stagger
             className="text-balance text-3xl font-semibold uppercase tracking-[0.3em] text-white md:text-4xl"
           >
-            Tell Me About Your Vision
+            Let&apos;s Build Something Great
           </h2>
           <p
             data-contact-stagger
             className="mx-auto max-w-2xl text-sm text-slate-300 md:text-base"
           >
-            Launching a cinematic marketing site, immersive product walkthrough, or interactive
-            dashboard? I&apos;m all ears. Drop a message and we&apos;ll choreograph something
-            unforgettable.
+            Looking to build a scalable CRM, SaaS platform, or modern web application? Let&apos;s
+            discuss how we can bring your vision to life with cutting-edge frontend technologies.
           </p>
         </div>
 
@@ -144,7 +190,7 @@ export const Contact = () => {
               name="email"
               type="email"
               required
-              placeholder="hello@miraz.dev"
+              placeholder="saifulmeraz@gmail.com"
               className="w-full rounded-2xl border border-white/10 bg-white/[0.07] px-5 py-4 text-sm text-white outline-none transition focus:border-neonGreen/70 focus:shadow-glow"
             />
           </div>
@@ -190,6 +236,21 @@ export const Contact = () => {
           </div>
         </form>
       </div>
+
+      {/* Toast Notification */}
+      {showToast && (
+        <div
+          ref={toastRef}
+          className="fixed bottom-8 left-1/2 z-50 -translate-x-1/2 transform"
+        >
+          <div className="flex items-center gap-3 rounded-full border border-neonGreen/60 bg-black/90 px-6 py-4 shadow-[0_0_30px_rgba(34,197,94,0.4)] backdrop-blur-sm">
+            <CheckCircle2 className="h-5 w-5 text-neonGreen" />
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-white">
+              Message Sent Successfully!
+            </p>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

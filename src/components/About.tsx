@@ -3,19 +3,18 @@
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
-import Tilt from "react-parallax-tilt";
 import { ensureGsapRegistered, prefersReducedMotion } from "@/lib/gsapAnimations";
 import { Code2, Palette, Sparkles } from "lucide-react";
 
 const skills = [
-  { label: "HTML5", accent: "from-orange-400 via-pink-400 to-red-500" },
-  { label: "CSS3", accent: "from-sky-500 via-cyan-400 to-blue-500" },
-  { label: "Tailwind", accent: "from-neonBlue via-cyan-300 to-indigo-500" },
+  { label: "JavaScript", accent: "from-orange-400 via-pink-400 to-red-500" },
+  { label: "TypeScript", accent: "from-sky-500 via-cyan-400 to-blue-500" },
   { label: "React", accent: "from-teal-400 via-teal-300 to-sky-400" },
   { label: "Next.js", accent: "from-slate-200 via-white/60 to-neonBlue/80" },
   { label: "Vue.js", accent: "from-emerald-400 via-lime-300 to-green-500" },
-  { label: "GSAP", accent: "from-neonGreen via-lime-300 to-sky-300" },
-  { label: "Framer Motion", accent: "from-purple-400 via-fuchsia-400 to-pink-500" },
+  { label: "Tailwind CSS", accent: "from-neonBlue via-cyan-300 to-indigo-500" },
+  { label: "ShadCN", accent: "from-neonGreen via-lime-300 to-sky-300" },
+  { label: "Redux/RTK Query", accent: "from-purple-400 via-fuchsia-400 to-pink-500" },
 ];
 
 export const About = () => {
@@ -40,8 +39,6 @@ export const About = () => {
       gsap.from("[data-skill-card]", {
         y: 50,
         opacity: 0,
-        rotateX: -15,
-        transformPerspective: 900,
         duration: 1,
         ease: "power3.out",
         stagger: 0.12,
@@ -71,35 +68,34 @@ export const About = () => {
             About Miraz
           </span>
           <h2 className="text-balance text-3xl font-semibold uppercase tracking-[0.3em] text-white md:text-4xl">
-            Elevating Interfaces With Motion &amp; Emotion
+            Crafting Scalable SaaS Solutions
           </h2>
           <p
             data-about-text
             className="mt-6 max-w-xl text-base text-slate-300/90"
           >
-            With over <span className="text-neonBlue">4 years</span> crafting frontend experiences,
-            I blend modern frameworks with expressive motion. From SaaS dashboards to marketing
-            microsites, I orchestrate typography, color, and choreography to design interfaces that
-            feel alive and react to every user gesture.
+            Results-driven Frontend Developer with <span className="text-neonBlue">3+ years</span> of experience
+            specializing in CRM and SaaS application development. Eager to contribute to innovative SaaS
+            solutions by leveraging expertise in component-based architecture, performance optimization,
+            and modern frontend best practices.
           </p>
           <div className="mt-8 grid gap-6 text-sm text-slate-200/90 sm:grid-cols-2">
             <div className="rounded-2xl border border-white/10 bg-black/40 p-6 shadow-glow">
               <Code2 className="mb-4 h-6 w-6 text-neonBlue" />
               <p className="font-semibold uppercase tracking-[0.25em] text-white">
-                Engineering Precision
+                Component Architecture
               </p>
               <p className="mt-2 text-sm text-slate-300">
-                Modular Next.js apps, performance budgets, and pixel-perfect responsive layouts.
+                Building reusable, scalable components with React, Next.js, and Vue.js following best practices.
               </p>
             </div>
             <div className="rounded-2xl border border-white/10 bg-black/40 p-6 shadow-glow">
               <Palette className="mb-4 h-6 w-6 text-neonGreen" />
               <p className="font-semibold uppercase tracking-[0.25em] text-white">
-                Artistic Direction
+                API Integration
               </p>
               <p className="mt-2 text-sm text-slate-300">
-                Neon palettes, glassmorphism, depth layering, and motion systems tailored to brand
-                voice.
+                Integrating RESTful APIs for seamless data management and ensuring responsive UI/UX across devices.
               </p>
             </div>
           </div>
@@ -107,24 +103,15 @@ export const About = () => {
       </div>
 
       <div className="relative flex-1">
-        <div className="grid gap-5 sm:grid-cols-2">
+        <div className="grid gap-6 sm:grid-cols-2">
           {skills.map((skill) => (
-            <Tilt
-              key={skill.label}
-              glareEnable
-              glareMaxOpacity={0.45}
-              glareColor="#38bdf8"
-              tiltMaxAngleX={12}
-              tiltMaxAngleY={12}
-              perspective={1000}
-              className="group"
-            >
+            <div key={skill.label} className="isolate">
               <div
                 data-skill-card
-                className="relative overflow-hidden rounded-2xl border border-white/10 bg-black/60 p-6 text-center shadow-glow transition-transform duration-300 group-hover:scale-[1.03]"
+                className="relative h-full min-h-[140px] overflow-hidden rounded-2xl border border-white/10 bg-black/60 p-6 text-center shadow-glow flex flex-col items-center justify-center"
               >
-                <div className={`pointer-events-none absolute inset-0 opacity-70 blur-2xl bg-gradient-to-br ${skill.accent}`} />
-                <div className="relative z-10">
+                <div className={`pointer-events-none absolute inset-0 opacity-40 blur-xl bg-gradient-to-br ${skill.accent}`} style={{ clipPath: 'inset(0)' }} />
+                <div className="relative z-10 w-full">
                   <p className="text-xs font-semibold uppercase tracking-[0.35em] text-white/80">
                     Expertise
                   </p>
@@ -133,7 +120,7 @@ export const About = () => {
                   </p>
                 </div>
               </div>
-            </Tilt>
+            </div>
           ))}
         </div>
       </div>

@@ -19,28 +19,20 @@ type Project = {
 
 const projects: Project[] = [
   {
-    title: "Aurora Interface Lab",
+    title: "WriterBuddy AI",
     description:
-      "Experimental UI system showcasing volumetric lighting, layered glass panels, and scroll-synced storytelling.",
+      "The most advanced AI writing assistant that streamlines your academic workflow. You can easily write any kind of article, blog, SEO meta tag also chat with any documents.",
     image: "/projects/aurora-lab.svg",
-    href: "https://dribbble.com/shots/aurora-interface-lab",
-    tags: ["Next.js", "GSAP", "Three.js"],
+    href: "https://writerbuddy.ai/",
+    tags: ["Next.js", "Vue.js", "Tailwind CSS", "Git", "Figma"],
   },
   {
-    title: "Pulse Analytics Dashboard",
+    title: "ApplyGoal CRM",
     description:
-      "Real-time fintech dashboard with neon gradient visualizations, anomaly alerts, and adaptive dark UI.",
+      "Developed a scalable CRM platform using Next.js and Tailwind CSS, tailored for education agencies and students applying to universities worldwide. Implemented role-based access (agency, student, admin) to provide personalized views and workflows. Built dynamic dashboards and forms for managing student applications, documents, and university programs.",
     image: "/projects/pulse-analytics.svg",
-    href: "https://dribbble.com/shots/pulse-analytics-dashboard",
-    tags: ["React", "Tailwind", "Framer Motion"],
-  },
-  {
-    title: "Nebula Launch Microsite",
-    description:
-      "Product launch experience with parallax hero, responsive depth layers, and GSAP ScrollTrigger sequences.",
-    image: "/projects/nebula-launch.svg",
-    href: "https://dribbble.com/shots/nebula-launch",
-    tags: ["Next.js", "GSAP ScrollTrigger", "Design Systems"],
+    href: "https://applygoal.com/",
+    tags: ["Next.js", "Tailwind CSS", "Role-Based Access", "CRM"],
   },
 ];
 
@@ -84,8 +76,8 @@ export const Projects = () => {
           Selected Projects
         </h2>
         <p className="mx-auto max-w-2xl text-sm text-slate-300 md:text-base">
-          Hover to tilt, press to explore. Each build combines crisp component architecture with
-          high-frame rate motion capture to tell a visceral product story.
+          Real-world projects showcasing expertise in building scalable SaaS platforms and CRM
+          solutions with modern frontend technologies and best practices.
         </p>
       </div>
 

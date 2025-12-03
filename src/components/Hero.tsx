@@ -3,13 +3,36 @@
 import { useEffect, useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
-import { Sparkles, ArrowUpRight } from "lucide-react";
+import { Sparkles, ArrowUpRight, Github, Linkedin, Mail, Phone } from "lucide-react";
 import {
   attachParallaxEffect,
   ensureGsapRegistered,
   prefersReducedMotion,
   smoothScrollTo,
 } from "@/lib/gsapAnimations";
+
+const socials = [
+  {
+    label: "GitHub",
+    href: "https://github.com/meraz007/",
+    icon: Github,
+  },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/saiful-meraz",
+    icon: Linkedin,
+  },
+  {
+    label: "Email",
+    href: "mailto:saifulmeraz@gmail.com",
+    icon: Mail,
+  },
+  {
+    label: "Phone",
+    href: "tel:+8801310709841",
+    icon: Phone,
+  },
+];
 
 export const Hero = () => {
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -71,6 +94,18 @@ export const Hero = () => {
           "-=0.4"
         )
         .from(
+          "[data-hero-socials] a",
+          {
+            y: 25,
+            opacity: 0,
+            scale: 0.8,
+            duration: 0.7,
+            ease: "power3.out",
+            stagger: 0.1,
+          },
+          "-=0.5"
+        )
+        .from(
           "[data-hero-orbit]",
           {
             opacity: 0,
@@ -118,7 +153,7 @@ export const Hero = () => {
           className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-black/30 px-4 py-2 text-xs font-medium uppercase tracking-[0.4em] text-neonBlue shadow-glow"
         >
           <Sparkles className="h-4 w-4 text-neonGreen" />
-          Cinematic Frontend Experiences
+          React, Next.js, Vue.js &amp; Tailwind CSS
         </span>
 
         <h1
@@ -127,16 +162,16 @@ export const Hero = () => {
         >
           Hi, I&apos;m <span className="text-neonBlue">Saiful Islam Miraz</span>
           <br />
-          Frontend Developer &amp; UI Animator
+          Frontend Engineer
         </h1>
 
         <p
           data-hero-description
           className="max-w-2xl text-balance text-base text-slate-300/90 md:text-lg"
         >
-          I craft immersive, neon-soaked user interfaces with motion-first storytelling. From
-          parallax hero moments to GSAP-powered micro-interactions, every pixel is choreographed for
-          a cinematic feel across web platforms.
+          Results-driven Frontend Developer with 3+ years of experience specializing in CRM and SaaS
+          application development using React, Next.js, Vue.js, and Tailwind CSS. Skilled in crafting
+          scalable, user-focused interfaces and integrating RESTful APIs for seamless data management.
         </p>
 
         <div
@@ -164,6 +199,24 @@ export const Hero = () => {
             </span>
             <span className="absolute inset-px rounded-full bg-gradient-to-r from-white/10 via-transparent to-white/10 opacity-0 transition-all duration-500 group-hover:opacity-100" />
           </button>
+        </div>
+
+        <div
+          data-hero-socials
+          className="flex items-center justify-center gap-4"
+        >
+          {socials.map((item) => (
+            <a
+              key={item.label}
+              href={item.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-black/40 text-slate-200 transition hover:border-neonBlue/60 hover:bg-black/60 hover:text-neonBlue hover:shadow-glow"
+              aria-label={item.label}
+            >
+              <item.icon className="h-5 w-5" />
+            </a>
+          ))}
         </div>
       </div>
 
