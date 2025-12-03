@@ -46,7 +46,7 @@ export const smoothScrollTo = (target: string | Element, offset = 0) => {
 
 export const createScrollTriggerReveal = (
   target: gsap.DOMTarget,
-  options: gsap.DOMTarget | Partial<ScrollTrigger> = {}
+  options: gsap.DOMTarget | Partial<ScrollTrigger.Vars> = {}
 ) => {
   ensureGsapRegistered();
 
@@ -57,11 +57,11 @@ export const createScrollTriggerReveal = (
     ease: "power3.out",
   };
 
-  const trigger: Partial<ScrollTrigger> =
-    options && "trigger" in options
-      ? options
+  const trigger: Partial<ScrollTrigger.Vars> =
+    options && typeof options === "object" && "trigger" in options
+      ? (options as Partial<ScrollTrigger.Vars>)
       : {
-          trigger: options || target,
+          trigger: (options as gsap.DOMTarget) || target,
           start: "top 85%",
         };
 
